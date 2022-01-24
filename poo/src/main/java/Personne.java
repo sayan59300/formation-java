@@ -38,7 +38,7 @@ public class Personne {
         return this.prenom;
     }
 
-    public void setNom(int age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
