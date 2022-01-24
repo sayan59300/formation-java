@@ -23,16 +23,8 @@ public class Eleve {
         return nom;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
     public int[] getListeNotes() {
         return listeNotes;
-    }
-
-    public void setListeNotes(int[] listeNotes) {
-        this.listeNotes = listeNotes;
     }
 
     public double getMoyenne() {
