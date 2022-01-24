@@ -39,10 +39,6 @@ public class Eleve {
         return moyenne;
     }
 
-    public void setMoyenne(double moyenne) {
-        this.moyenne = moyenne;
-    }
-
     public void ajouterNote(int note) {
         listeNotes[nombreNotes] = note;
         nombreNotes++;
