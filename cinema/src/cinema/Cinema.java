@@ -147,6 +147,16 @@ public class Cinema {
                 } while (choixFilm != 1 && choixFilm != 2 && choixFilm != 3);
                 //fin menu film
             }
+            if (choix == 2) {
+                System.out.println("Quelle salle souhaitez vous vider ?");
+                int salle = scan.nextInt();
+                if (salle == 1 || salle == 2 || salle == 3) {
+                    placesRestantes[salle] = places[salle];
+                    System.out.println("La salle a été vidée.");
+                } else {
+                    System.out.println("La salle n'existe pas.");
+                }
+            }
             if (choix == 3) {
                 System.out.println("---Historique---");
                 for (int i = 0; i < 10; i++) {
