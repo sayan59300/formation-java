@@ -33,18 +33,21 @@ public class Cinema {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        //places des salles
+        //Places des salles
         int[] places = {10, 15, 5};
-        //places restantes des salles
+        //Places restantes des salles
         int[] placesRestantes = {10, 15, 5};
-        //liste des films
+        //Liste des films
         String[] film = {"Les sept samouraïs", "8 1/2", "Nostalghia"};
-        //prix des séances
+        //Prix des séances
         int[] prix = {7, 5, 10};
-        //choix menu principal
+        //Historique des places prises
+        String[] historique = new String[10];
+        //Choix menu principal
         int choix = 0;
-        //choix menu film
+        //Choix menu film
         int choixFilm = 0;
+        int paiement = 0;
 
         //menu principal
         do {
@@ -53,7 +56,8 @@ public class Cinema {
                     Quelle action souhaitez vous réaliser ?
                     1 - Choisir un film
                     2 - Vider une salle
-                    3 - Quitter l'application
+                    3 - Afficher l'historique
+                    4 - Quitter l'application
                     """
             );
             choix = scan.nextInt();
@@ -72,18 +76,69 @@ public class Cinema {
                             if (checkPlaces(choixFilm - 1, placesRestantes)) {
                                 afficherPlacesRestantes(choixFilm - 1, places, placesRestantes);
                                 afficherPrix(choixFilm - 1, prix);
+                                //On décrémente les places restantes pour le film sélectionné
+                                placesRestantes[choixFilm - 1]--;
+                                //Paiement
+                                payer(paiement, prix, choixFilm - 1);
+                                //On hydrate l'historique
+                                addHistorique(film[choixFilm - 1], prix[choixFilm - 1], historique);
+                                System.out.printf("""
+                                                   -------------------------------
+                                                    Dirigez vous vers la salle %d
+                                                   -------------------------------
+                                                   """, choixFilm);
+                            } else {
+                                System.out.println("""
+                                                   ------------------------------------
+                                                    Il n'y a plus de place disponible.
+                                                   ------------------------------------
+                                                   """);
                             }
                             break;
                         case 2:
                             if (checkPlaces(choixFilm - 1, placesRestantes)) {
                                 afficherPlacesRestantes(choixFilm - 1, places, placesRestantes);
                                 afficherPrix(choixFilm - 1, prix);
+                                //On décrémente les places restantes pour le film sélectionné
+                                placesRestantes[choixFilm - 1]--;
+                                //Paiement
+                                payer(paiement, prix, choixFilm - 1);
+                                //On hydrate l'historique
+                                addHistorique(film[choixFilm - 1], prix[choixFilm - 1], historique);
+                                System.out.printf("""
+                                                   -------------------------------
+                                                    Dirigez vous vers la salle %d
+                                                   -------------------------------
+                                                   """, choixFilm);
+                            } else {
+                                System.out.println("""
+                                                   ------------------------------------
+                                                    Il n'y a plus de place disponible.
+                                                   ------------------------------------
+                                                   """);
                             }
                             break;
                         case 3:
                             if (checkPlaces(choixFilm - 1, placesRestantes)) {
                                 afficherPlacesRestantes(choixFilm - 1, places, placesRestantes);
                                 afficherPrix(choixFilm - 1, prix);
+                                //On décrémente les places restantes pour le film sélectionné
+                                placesRestantes[choixFilm - 1]--;
+                                //Paiement
+                                payer(paiement, prix, choixFilm - 1);
+                                //On hydrate l'historique
+                                addHistorique(film[choixFilm - 1], prix[choixFilm - 1], historique);
+                                System.out.printf("""
+                                                   -------------------------------
+                                                    Dirigez vous vers la salle %d
+                                                   -------------------------------
+                                                   """, choixFilm);
+                            } else {
+                                System.out.println("""
+                                                   ------------------------------------
+                                                    Il n'y a plus de place disponible.
+                                                   ------------------------------------
+                                                   """);
                             }
                             break;
                         default:
@@ -92,7 +147,16 @@ public class Cinema {
                 } while (choixFilm != 1 && choixFilm != 2 && choixFilm != 3);
                 //fin menu film
             }
-        } while (choix != 3);
+            if (choix == 3) {
+                System.out.println("---Historique---");
+                for (int i = 0; i < 10; i++) {
+                    if (historique[i] != null) {
+                        System.out.println(historique[i]);
+                    }
+                }
+                System.out.println("---Fin de l'historique---\n");
+            }
+        } while (choix != 4);
         //fin menu principal
 
     }
@@ -104,14 +168,15 @@ public class Cinema {
      * @param prix
      */
     private static void afficherPrix(int index, int[] prix) {
-        System.out.println(prix[index] + " €");
+        System.out.println("Prix : " + prix[index] + " €");
     }
 
     /**
      * Affiche le prix du film sélectionné
      *
      * @param index
-     * @param prix
+     * @param places
+     * @param placesRestantes
      */
     private static void afficherPlacesRestantes(int index, int[] places, int[] placesRestantes) {
         System.out.println("Place restantes : " + placesRestantes[index] + " sur " + places[index]);
@@ -130,6 +195,62 @@ public class Cinema {
             disponible = true;
         }
         return disponible;
+    }
+
+    /**
+     * Réglement de la place
+     *
+     * @param paiement
+     * @param prix
+     * @param film
+     */
+    private static void payer(int paiement, int[] prix, int film) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("""
+                           ----------
+                            Paiement
+                           ----------
+                           """);
+        paiement = scan.nextInt();
+        while (paiement < prix[film]) {
+            System.out.println("Il reste " + (prix[film] - paiement) + " à régler");
+            paiement += scan.nextInt();
+        }
+        System.out.println("""
+                           ------------------
+                            Paiement complet
+                           ------------------
+                           """);
+
+        if (paiement > prix[film]) {
+            System.out.printf("""
+                           ---------------
+                            Rendre : %d €
+                           ---------------
+                           """, (paiement - prix[film]));
+        }
+    }
+
+    /**
+     * Rempli l'historique, si on trouve un place vide on rempli sinon on rempli
+     * la première case
+     *
+     * @param film
+     * @param prix
+     * @param historique
+     */
+    public static void addHistorique(String film, int prix, String[] historique) {
+        boolean trouve = false;
+        for (int i = 0; i < historique.length; i++) {
+            if (historique[i] == null) {
+                historique[i] = "1 place prise pour le film : " + film + " au prix de " + prix + " €";
+                trouve = true;
+                break;
+            }
+        }
+        if (!trouve) {
+            historique[0] = "1 place prise pour le film : " + film + " au prix de " + prix + " €";
+        }
     }
 
 }
