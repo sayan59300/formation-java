@@ -46,4 +46,14 @@ public class Personne {
         return this.age;
     }
 
+    /**
+     * Methode d'affichage d'une personne
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
+        return "Personne\n" + "Nom : " + nom + "\nPrénom : " + prenom + "\nAge : " + age;
+    }
+
 }

@@ -19,31 +19,23 @@ public class ExoPersonne {
         personne.setPrenom("Emmanuel");
         personne.setAge(44);
 
-        System.out.println("Nom : " + personne.getNom());
-        System.out.println("Prénom : " + personne.getPrenom());
-        System.out.println("Age : " + personne.getAge() + " an(s)");
+        System.out.println(personne.toString());
 
         System.out.println("-----------------------");
 
         Personne personne2 = new Personne("Philippe", "Edouart", 46);
 
-        System.out.println("Nom : " + personne2.getNom());
-        System.out.println("Prénom : " + personne2.getPrenom());
-        System.out.println("Age : " + personne2.getAge() + " an(s)");
+        System.out.println(personne2.toString());
 
         System.out.println("-----------------------");
 
-        TestPersonne personne3 = new TestPersonne();
+        Personne personne3 = new Personne();
 
-        personne3.setNom("Hollade");
+        personne3.setNom("Hollande");
         personne3.setPrenom("François");
-        personne3.setAge(75);
-        personne3.setPoids(90);
+        personne3.setAge(67);
 
-        System.out.println("Nom : " + personne3.getNom());
-        System.out.println("Prénom : " + personne3.getPrenom());
-        System.out.println("Age : " + personne3.getAge() + " an(s)");
-        System.out.println("Poids : " + personne3.getPoids() + " kg");
+        System.out.println(personne3.toString());
 
         System.out.println("-----------------------");
 
@@ -54,10 +46,7 @@ public class ExoPersonne {
                             ------------------
                             ------------------""");
         for (int i = 0; i < liste.length; i++) {
-            System.out.println("Nom : " + liste[i].getNom());
-            System.out.println("Prénom : " + liste[i].getPrenom());
-            System.out.println("Age : " + liste[i].getAge() + " an(s)");
-
+            System.out.println(liste[i].toString());
             System.out.println("-----------------------");
         }
     }
