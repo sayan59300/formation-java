@@ -44,7 +44,7 @@ public class Eleve {
     }
 
     public void ajouterNote(int note) {
-        listeNotes[nombreNotes + 1] = note;
+        listeNotes[nombreNotes] = note;
         nombreNotes++;
     }
 
