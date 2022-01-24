@@ -7,6 +7,6 @@
  *
  * @author sayan593
  */
-public class TestPersonne {
+public class TestPersonne extends Personne {
 
 }
