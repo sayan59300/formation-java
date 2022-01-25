@@ -17,7 +17,10 @@ public class Entreprise {
 
     @Override
     public String toString() {
-        return "Entreprise " + nom + "\nSecteur = " + secteur + "\nNombre d'employé(s) = " + nombreEmployes;
+        return "Entreprise "
+                + nom + "\nSecteur = "
+                + secteur + "\nNombre d'employé(s) = "
+                + nombreEmployes;
     }
 
     public String getNom() {

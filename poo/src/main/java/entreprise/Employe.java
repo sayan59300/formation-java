@@ -18,7 +18,12 @@ public class Employe {
 
     @Override
     public String toString() {
-        return "---\nEmploye \nid = " + id + "\nNom = " + nom + "\nPrenom = " + prenom + "\nSexe = " + sexe + "\nSalaire = " + salaire + '}';
+        return "---\nEmploye \nid = "
+                + id + "\nNom = "
+                + nom + "\nPrenom = "
+                + prenom + "\nSexe = "
+                + sexe + "\nSalaire = "
+                + salaire;
     }
 
     public String getId() {
