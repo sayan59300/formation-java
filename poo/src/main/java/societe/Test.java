@@ -8,7 +8,7 @@ package societe;
  *
  * @author sayan593
  */
-public class App {
+public class Test {
 
     /**
      * @param args the command line arguments
