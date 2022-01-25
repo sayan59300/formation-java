@@ -81,7 +81,7 @@ public class Entreprise {
         //rechercher l'employer
         //sauvegarder sa position
         //demander les nouvelles valeurs
-        //enregistrer les modifications dans l'employé à la position sauvegardéé
+        //enregistrer les modifications dans l'employé à la position sauvegardée
     }
 
     /**
