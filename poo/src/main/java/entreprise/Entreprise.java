@@ -50,14 +50,10 @@ public class Entreprise {
             nombreEmployes++;
         } else {
             Employe[] newlisteEmployes = new Employe[this.employes.length + 1];
-            for (int i = 0; i < this.employes.length; i++) {
-                newlisteEmployes[i] = this.employes[i];
-            }
+            System.arraycopy(this.employes, 0, newlisteEmployes, 0, this.employes.length);
             newlisteEmployes[newlisteEmployes.length - 1] = employes;
             this.employes = new Employe[newlisteEmployes.length];
-            for (int i = 0; i < newlisteEmployes.length; i++) {
-                this.employes[i] = newlisteEmployes[i];
-            }
+            System.arraycopy(newlisteEmployes, 0, this.employes, 0, newlisteEmployes.length);
             nombreEmployes++;
         }
     }
