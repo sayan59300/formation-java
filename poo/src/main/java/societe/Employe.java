@@ -10,4 +10,9 @@ package societe;
  */
 public class Employe {
 
+    private int numero;
+    private String nom;
+    private Societe societe;
+    private double salaire;
+
 }

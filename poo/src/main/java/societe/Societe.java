@@ -10,4 +10,7 @@ package societe;
  */
 public class Societe {
 
+    private String nom;
+    private Employe[] employes;
+    private double masseSalariale;
 }
