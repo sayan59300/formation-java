@@ -11,7 +11,7 @@ package gestionEleves;
 public class Eleve {
 
     private String nom;
-    private int[] listeNotes;
+    private double[] listeNotes = new double[1];
     private int nombreNotes = 0;
     private double moyenne = 0;
 
@@ -23,17 +23,43 @@ public class Eleve {
         return nom;
     }
 
-    public int[] getListeNotes() {
-        return listeNotes;
+    public void getListeNotes() {
+        for (int i = 0; i < listeNotes.length; i++) {
+            System.out.println("Note " + (i + 1) + " : " + listeNotes[i]);
+        }
     }
 
     public double getMoyenne() {
+        double totalNote = 0;
+        for (int i = 0; i < listeNotes.length; i++) {
+            totalNote = totalNote + listeNotes[i];
+        }
+        moyenne = totalNote / nombreNotes;
         return moyenne;
     }
 
     public void ajouterNote(int note) {
-        listeNotes[nombreNotes] = note;
-        nombreNotes++;
+        if (nombreNotes == 0) {
+            listeNotes[0] = note;
+            nombreNotes++;
+        } else {
+            double[] newlisteNotes = new double[listeNotes.length + 1];
+            for (int i = 0; i < listeNotes.length; i++) {
+                newlisteNotes[i] = listeNotes[i];
+            }
+            newlisteNotes[newlisteNotes.length - 1] = note;
+            listeNotes = new double[newlisteNotes.length];
+            for (int i = 0; i < newlisteNotes.length; i++) {
+                listeNotes[i] = newlisteNotes[i];
+            }
+            nombreNotes++;
+        }
+
+    }
+
+    @Override
+    public String toString() {
+        return "Eleve : " + nom + "\nMoyenne = " + getMoyenne();
     }
 
 }

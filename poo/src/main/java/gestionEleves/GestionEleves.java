@@ -14,7 +14,15 @@ public class GestionEleves {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Eleve eleve = new Eleve("Lou-anne");
+        eleve.ajouterNote(20);
+        eleve.ajouterNote(18);
+        eleve.ajouterNote(17);
+        eleve.ajouterNote(19);
+        System.out.println("---eleve.getListeNotes()---");
+        eleve.getListeNotes();
+        System.out.println("---Eleve---");
+        System.out.println(eleve);
     }
 
 }
