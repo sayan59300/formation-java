@@ -18,7 +18,7 @@ public class Employe {
 
     @Override
     public String toString() {
-        return "---\nEmploye \nid = "
+        return "---\nEmployé \nid = "
                 + id + "\nNom = "
                 + nom + "\nPrenom = "
                 + prenom + "\nSexe = "

@@ -70,5 +70,16 @@ public class App {
         System.out.println(entreprise2.toString());
         System.out.println(entreprise2.getEmployes());
 
+        System.out.println("------------Suppression employé--------\n");
+
+        entreprise2.delete("Sarkozy");
+
+        System.out.println(entreprise2.toString());
+        System.out.println(entreprise2.getEmployes());
+
+        System.out.println("------------Recherche employé--------\n");
+
+        entreprise1.search("Carembeuh");
+        entreprise1.search("Camembert");
     }
 }
