@@ -39,7 +39,7 @@ public class Entreprise {
     public String getEmployes() {
         String liste = "";
         for (int i = 0; i < this.employes.length; i++) {
-            liste += this.employes[i].toString() + "\n";
+            liste += this.employes[i] + "\n";
         }
         return liste;
     }
