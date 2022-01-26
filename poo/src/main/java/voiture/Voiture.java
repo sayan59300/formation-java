@@ -33,9 +33,11 @@ public class Voiture {
      *
      * @param roue
      * @param emplacement
+     * @return
      */
-    public void ajoutRoue(Roue roue, int emplacement) {
+    public Voiture ajoutRoue(Roue roue, int emplacement) {
         this.roues[emplacement - 1] = roue;
+        return this;
     }
 
     public int getNumero() {
