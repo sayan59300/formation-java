@@ -37,6 +37,7 @@ public class Voiture {
      */
     public Voiture ajoutRoue(Roue roue, int emplacement) {
         this.roues[emplacement - 1] = roue;
+        roue.setEtat(false);
         return this;
     }
 

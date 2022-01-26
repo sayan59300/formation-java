@@ -19,19 +19,14 @@ public class AppVoiture {
         Roue roue3 = new Roue(3, 205);
         Roue roue4 = new Roue(4, 205);
 
-        Voiture voiture = new Voiture(1, "Peugeot", "Rouge");
+        Voiture voiture = new Voiture(55, "Peugeot", "Noire");
         voiture
                 .ajoutRoue(roue1, 1)
                 .ajoutRoue(roue2, 2)
                 .ajoutRoue(roue3, 3)
                 .ajoutRoue(roue4, 4);
 
-        roue1.setEtat(false);
-        roue2.setEtat(false);
-        roue3.setEtat(false);
-        roue4.setEtat(false);
-
-        System.out.println(roue1.getEtat());
+        System.out.println("Etat de la roue 1 : " + roue1.getEtat());
 
     }
 
