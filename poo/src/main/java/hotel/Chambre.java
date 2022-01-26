@@ -10,26 +10,30 @@ package hotel;
  */
 public class Chambre {
 
-    private int numéro;
+    private int numero;
     private String[] typesChambre = {"single", "twin", "double", "suite"};
     double prix;
     private int statut = 0;
     private int type = 0;
 
     public Chambre(int numéro, int type) {
-        this.numéro = numéro;
+        this.numero = numéro;
     }
 
     public int getNuméro() {
-        return numéro;
+        return numero;
     }
 
     public void setNuméro(int numéro) {
-        this.numéro = numéro;
+        this.numero = numéro;
     }
 
-    public String[] getTypesChambre() {
-        return typesChambre;
+    public String getTypesChambre() {
+        String liste = "Types de chambre : \n";
+        for (int i = 0; i < typesChambre.length; i++) {
+            liste += i + 1 + " : " + typesChambre[i] + "\n";
+        }
+        return liste;
     }
 
     public double getPrix() {
@@ -48,8 +52,8 @@ public class Chambre {
         this.statut = statut;
     }
 
-    public int getType() {
-        return type;
+    public String getType() {
+        return typesChambre[type];
     }
 
     public void setType(int type) {

@@ -14,11 +14,11 @@ public class AppHotel {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Client client = new Client("Gérard");
 
-        System.out.println(client);
+        Hotel hotel = new Hotel("Waldorf Astoria", 50);
 
-        System.out.println(client.getTypeClient());
+        System.out.println(hotel);
+
     }
 
 }
