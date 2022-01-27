@@ -8,7 +8,7 @@ package heritage;
  *
  * @author Sayan593
  */
-public class AppHeritage {
+public class Bibliotheque {
 
     /**
      * @param args the command line arguments
