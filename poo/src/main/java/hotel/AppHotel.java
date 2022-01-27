@@ -155,7 +155,11 @@ public class AppHotel {
                 System.out.println("Mot de passe : ");
                 String passwordSaisie = scan.next();
                 if (anthentification(loginSaisie, passwordSaisie)) {
-
+                    System.out.println("Quel type de chambre voulez vous libérer ? " + Chambre.getListeTypesChambre());
+                    int choixTypeChambre = scan.nextInt();
+                    Chambre chambre = hotel.getDerniereChambreOccupeeParType(choixTypeChambre);
+                    chambre.setStatut(true);
+                    System.out.println("La dernière chambre de ce type est de nouveau disponible");
                 } else {
                     System.out.println("Autentification invalide");
                 }

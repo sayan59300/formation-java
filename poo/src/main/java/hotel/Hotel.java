@@ -32,6 +32,10 @@ public class Hotel {
         return listeChambres;
     }
 
+    public Reservation[] getListeReservations() {
+        return listeReservations;
+    }
+
     public int getChambresLibres() {
         int count = 0;
         for (int i = 0; i < listeChambres.length; i++) {
@@ -78,6 +82,16 @@ public class Hotel {
         Chambre chambre = new Chambre();
         for (int i = 0; i < listeChambres.length; i++) {
             if (listeChambres[i].getStatut() && listeChambres[i].getType() == type - 1) {
+                chambre = listeChambres[i];
+            }
+        }
+        return chambre;
+    }
+
+    public Chambre getDerniereChambreOccupeeParType(int type) {
+        Chambre chambre = new Chambre();
+        for (int i = listeChambres.length - 1; i > 0; i--) {
+            if (!listeChambres[i].getStatut() && listeChambres[i].getType() == type - 1) {
                 chambre = listeChambres[i];
             }
         }
