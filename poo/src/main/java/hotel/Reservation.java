@@ -15,7 +15,6 @@ public class Reservation {
     private Chambre chambre;
     private Client client;
     private Date date;
-    private int periode = 1;
 
     public Reservation(Chambre chambre, Client client, Date date) {
         this.chambre = chambre;
@@ -33,14 +32,6 @@ public class Reservation {
 
     public Date getDate() {
         return date;
-    }
-
-    public int getPeriode() {
-        return periode;
-    }
-
-    public void setPeriode(int periode) {
-        this.periode = periode;
     }
 
 }

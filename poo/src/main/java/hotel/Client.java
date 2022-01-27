@@ -11,11 +11,12 @@ package hotel;
 public class Client {
 
     private String nom;
-    private String[] typesClient = {"Personne", "Groupe", "Société"};
+    private static String[] typesClient = {"Personne", "Groupe", "Société"};
     private int type = 0;
 
-    public Client(String nom) {
+    public Client(String nom, int type) {
         this.nom = nom;
+        this.type = type - 1;
     }
 
     public void setType(int type) {
@@ -26,7 +27,7 @@ public class Client {
         return typesClient[type];
     }
 
-    public String getTypeClient() {
+    public static String getTypeClient() {
         String liste = "Types de client : \n";
         for (int i = 0; i < typesClient.length; i++) {
             liste += i + 1 + " : " + typesClient[i] + "\n";

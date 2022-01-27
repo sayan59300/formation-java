@@ -4,20 +4,36 @@
  */
 package hotel;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Sayan593
  */
 public class Chambre {
 
+    private static final DecimalFormat formater = new DecimalFormat("0.00");
     private int numero;
-    private String[] typesChambre = {"single", "twin", "double", "suite"};
+    private static String[] typesChambre = {"single", "twin", "double", "suite"};
     double prix;
-    private int statut = 0;
+    private boolean statut = true;
     private int type = 0;
+
+    public Chambre() {
+    }
 
     public Chambre(int numéro, int type) {
         this.numero = numéro;
+        this.type = type;
+    }
+
+    public Chambre(int numéro, int type, int statut, double prix) {
+        this.numero = numéro;
+        this.type = type;
+        if (statut == 0) {
+            this.statut = false;
+        }
+        this.prix = prix;
     }
 
     public int getNuméro() {
@@ -28,12 +44,20 @@ public class Chambre {
         this.numero = numéro;
     }
 
-    public String getTypesChambre() {
+    public static String getListeTypesChambre() {
         String liste = "Types de chambre : \n";
         for (int i = 0; i < typesChambre.length; i++) {
             liste += i + 1 + " : " + typesChambre[i] + "\n";
         }
         return liste;
+    }
+
+    public static String[] getTypesChambre() {
+        return typesChambre;
+    }
+
+    public String getTypeChambre(int index) {
+        return typesChambre[index];
     }
 
     public double getPrix() {
@@ -44,20 +68,25 @@ public class Chambre {
         this.prix = prix;
     }
 
-    public int getStatut() {
+    public boolean getStatut() {
         return statut;
     }
 
-    public void setStatut(int statut) {
+    @Override
+    public String toString() {
+        return "\n------------------\nChambre " + numero + "\nType : " + typesChambre[type] + "\nPrix : " + formater.format(prix) + "\nStatut " + (statut ? "Libre" : "Occupée");
+    }
+
+    public void setStatut(boolean statut) {
         this.statut = statut;
     }
 
-    public String getType() {
-        return typesChambre[type];
+    public int getType() {
+        return type;
     }
 
     public void setType(int type) {
-        this.type = type;
+        this.type = type - 1;
     }
 
 }
