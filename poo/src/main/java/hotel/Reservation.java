@@ -4,8 +4,6 @@
  */
 package hotel;
 
-import java.util.Date;
-
 /**
  *
  * @author Sayan593
@@ -14,12 +12,10 @@ public class Reservation {
 
     private Chambre chambre;
     private Client client;
-    private Date date;
 
-    public Reservation(Chambre chambre, Client client, Date date) {
+    public Reservation(Chambre chambre, Client client) {
         this.chambre = chambre;
         this.client = client;
-        this.date = date;
     }
 
     public Chambre getChambre() {
@@ -29,9 +25,4 @@ public class Reservation {
     public Client getClient() {
         return client;
     }
-
-    public Date getDate() {
-        return date;
-    }
-
 }

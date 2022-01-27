@@ -12,7 +12,7 @@ import java.text.DecimalFormat;
  */
 public class Chambre {
 
-    private static final DecimalFormat formater = new DecimalFormat("0.00");
+    private final DecimalFormat formater = new DecimalFormat("0.00");
     private int numero;
     private static String[] typesChambre = {"single", "twin", "double", "suite"};
     double prix;

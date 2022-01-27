@@ -100,6 +100,19 @@ public class Hotel {
         }
     }
 
+    public boolean ajoutReservation(Reservation reservation) {
+        boolean reserve = false;
+        for (int i = 0; i < listeReservations.length; i++) {
+            if (listeReservations[i] == null) {
+                listeReservations[i] = reservation;
+                reservation.getChambre().setStatut(false);
+                reserve = true;
+                break;
+            }
+        }
+        return reserve;
+    }
+
     public String afficheListeChambres() {
         String affiche = "-----------------------Liste des chambres------------------------\n";
         for (int i = 0; i < listeChambres.length; i++) {

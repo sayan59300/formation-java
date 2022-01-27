@@ -19,13 +19,13 @@ public class AppHotel {
      *
      * @param args the command line arguments
      */
+    private static final String login = "nicolas";
+    private static final String password = "employe01";
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Random random = new Random();
-
         String choix = "";
-        String choixQuestionType = "";
-        int choixType = 0;
         Hotel hotel = new Hotel("Waldorf Astoria", 20);
         for (int i = 0; i < hotel.getListeChambre().length; i++) {
             Chambre chambre = new Chambre(i + 1, random.nextInt(4), random.nextInt(2), random.nextDouble(30, 50));
@@ -58,6 +58,8 @@ public class AppHotel {
                 System.out.println("Nombre de chambres libres " + hotel.getChambresLibres());
             }
             if (choix.equals("d")) {
+                String choixQuestionType = "";
+                int choixType = 0;
                 do {
                     System.out.println("Voulez vous un type particulier ? oui/non");
                     choixQuestionType = scan.next();
@@ -90,6 +92,8 @@ public class AppHotel {
                 } while (!choixQuestionType.equals("oui") || !choixQuestionType.equals("non"));
             }
             if (choix.equals("e")) {
+                String choixQuestionType = "";
+                int choixType = 0;
                 do {
                     System.out.println("Voulez vous un type particulier ? oui/non");
                     choixQuestionType = scan.next().toLowerCase();
@@ -122,13 +126,50 @@ public class AppHotel {
                 } while (!choixQuestionType.equals("oui") || !choixQuestionType.equals("non"));
             }
             if (choix.equals("f")) {
-
+                System.out.println("Login : ");
+                String loginSaisie = scan.next().toLowerCase();
+                System.out.println("Mot de passe : ");
+                String passwordSaisie = scan.next();
+                if (anthentification(loginSaisie, passwordSaisie)) {
+                    System.out.println("Quel type de chambre voulez vous réserver ? " + Chambre.getListeTypesChambre());
+                    int choixTypeChambre = scan.nextInt();
+                    Chambre chambre = hotel.getPremiereChambreLibreParType(choixTypeChambre);
+                    System.out.println("Nom du client : ");
+                    String nomClient = scan.next();
+                    System.out.println(Client.getTypeClient());
+                    int typeClient = scan.nextInt();
+                    Client client = new Client(nomClient, typeClient);
+                    Reservation reservation = new Reservation(chambre, client);
+                    if (hotel.ajoutReservation(reservation)) {
+                        System.out.println("Réservation enregistrée");
+                    } else {
+                        System.out.println("Plus de place disponible");
+                    }
+                } else {
+                    System.out.println("Autentification invalide");
+                }
             }
             if (choix.equals("g")) {
+                System.out.println("Login : ");
+                String loginSaisie = scan.next().toLowerCase();
+                System.out.println("Mot de passe : ");
+                String passwordSaisie = scan.next();
+                if (anthentification(loginSaisie, passwordSaisie)) {
 
+                } else {
+                    System.out.println("Autentification invalide");
+                }
             }
 
         } while (!choix.equals("q"));
+    }
+
+    private static boolean anthentification(String loginSaisie, String passwordSaisie) {
+        boolean valide = false;
+        if (loginSaisie.equals(login) && passwordSaisie.equals(password)) {
+            valide = true;
+        }
+        return valide;
     }
 
 }
