@@ -27,7 +27,12 @@ public class Client {
         return typesClient[type];
     }
 
-    public static String getTypeClient() {
+    /**
+     * retourne la liste des types de clients
+     *
+     * @return
+     */
+    public static String getTypesClient() {
         String liste = "Types de client : \n";
         for (int i = 0; i < typesClient.length; i++) {
             liste += i + 1 + " : " + typesClient[i] + "\n";

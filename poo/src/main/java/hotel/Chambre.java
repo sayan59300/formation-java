@@ -44,6 +44,11 @@ public class Chambre {
         this.numero = numéro;
     }
 
+    /**
+     * retourne la liste des types de chambre formattée en chaine de caractères
+     *
+     * @return
+     */
     public static String getListeTypesChambre() {
         String liste = "Types de chambre : \n";
         for (int i = 0; i < typesChambre.length; i++) {
@@ -72,11 +77,6 @@ public class Chambre {
         return statut;
     }
 
-    @Override
-    public String toString() {
-        return "\n------------------\nChambre " + numero + "\nType : " + typesChambre[type] + "\nPrix : " + formater.format(prix) + "\nStatut " + (statut ? "Libre" : "Occupée");
-    }
-
     public void setStatut(boolean statut) {
         this.statut = statut;
     }
@@ -87,6 +87,11 @@ public class Chambre {
 
     public void setType(int type) {
         this.type = type - 1;
+    }
+
+    @Override
+    public String toString() {
+        return "\n------------------\nChambre " + numero + "\nType : " + typesChambre[type] + "\nPrix : " + formater.format(prix) + "\nStatut " + (statut ? "Libre" : "Occupée");
     }
 
 }

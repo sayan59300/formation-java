@@ -136,7 +136,7 @@ public class AppHotel {
                     Chambre chambre = hotel.getPremiereChambreLibreParType(choixTypeChambre);
                     System.out.println("Nom du client : ");
                     String nomClient = scan.next();
-                    System.out.println(Client.getTypeClient());
+                    System.out.println(Client.getTypesClient());
                     int typeClient = scan.nextInt();
                     Client client = new Client(nomClient, typeClient);
                     Reservation reservation = new Reservation(chambre, client);

@@ -36,6 +36,11 @@ public class Hotel {
         return listeReservations;
     }
 
+    /**
+     * retourne le nombre de chambres libres
+     *
+     * @return
+     */
     public int getChambresLibres() {
         int count = 0;
         for (int i = 0; i < listeChambres.length; i++) {
@@ -46,6 +51,11 @@ public class Hotel {
         return count;
     }
 
+    /**
+     * retourne la première chambre libre
+     *
+     * @return
+     */
     public Chambre getPremiereChambreLibre() {
         Chambre chambre = new Chambre();
         for (int i = 0; i < listeChambres.length; i++) {
@@ -57,6 +67,12 @@ public class Hotel {
         return chambre;
     }
 
+    /**
+     * retourne la première chambre libre en fonction de son type
+     *
+     * @param type
+     * @return
+     */
     public Chambre getPremiereChambreLibreParType(int type) {
         Chambre chambre = new Chambre();
         for (int i = 0; i < listeChambres.length; i++) {
@@ -68,6 +84,11 @@ public class Hotel {
         return chambre;
     }
 
+    /**
+     * retourne la dernière chambre libre
+     *
+     * @return
+     */
     public Chambre getDerniereChambreLibre() {
         Chambre chambre = new Chambre();
         for (int i = 0; i < listeChambres.length; i++) {
@@ -78,6 +99,12 @@ public class Hotel {
         return chambre;
     }
 
+    /**
+     * retourne la dernière chambre libre en fonction de son type
+     *
+     * @param type
+     * @return
+     */
     public Chambre getDerniereChambreLibreParType(int type) {
         Chambre chambre = new Chambre();
         for (int i = 0; i < listeChambres.length; i++) {
@@ -88,6 +115,12 @@ public class Hotel {
         return chambre;
     }
 
+    /**
+     * retourne la dernière chambre occupée en fonction de son type
+     *
+     * @param type
+     * @return
+     */
     public Chambre getDerniereChambreOccupeeParType(int type) {
         Chambre chambre = new Chambre();
         for (int i = listeChambres.length - 1; i > 0; i--) {
@@ -98,6 +131,11 @@ public class Hotel {
         return chambre;
     }
 
+    /**
+     * retourne le nombre de chambres reservées
+     *
+     * @return
+     */
     public int getChambresReservees() {
         int count = 0;
         for (int i = 0; i < listeReservations.length; i++) {
@@ -108,12 +146,24 @@ public class Hotel {
         return count;
     }
 
+    /**
+     * ajoute une chambre a la liste des chambres
+     *
+     * @param chambre
+     * @param index
+     */
     public void ajoutChambre(Chambre chambre, int index) {
         for (int i = 0; i < listeChambres.length; i++) {
             listeChambres[i] = chambre;
         }
     }
 
+    /**
+     * ajoute une réservation à la liste des réservations
+     *
+     * @param reservation
+     * @return
+     */
     public boolean ajoutReservation(Reservation reservation) {
         boolean reserve = false;
         for (int i = 0; i < listeReservations.length; i++) {
@@ -127,6 +177,11 @@ public class Hotel {
         return reserve;
     }
 
+    /**
+     * affiche la liste des chambres
+     *
+     * @return
+     */
     public String afficheListeChambres() {
         String affiche = "-----------------------Liste des chambres------------------------\n";
         for (int i = 0; i < listeChambres.length; i++) {
