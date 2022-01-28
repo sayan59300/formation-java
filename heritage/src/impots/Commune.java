@@ -44,7 +44,7 @@ public class Commune {
 
     @Override
     public String toString() {
-        return "\nCode postale : " + codePostale + "\nNom=" + nom;
+        return "\nCode postale : " + codePostale + "\nNom : " + nom;
     }
 
 }
