@@ -20,9 +20,11 @@ public class DemoCalcImpots {
         Proprietaire proprio4 = new Proprietaire("Jackson", "Mickael", 70, 4);
 
         Habitation habitation1 = new HabitationIndividuelle(proprio1, "23 rue du menile 59770 Marly", 100, 8, false);
-        Habitation habitation2 = new HabitationProfessionnelle(proprio2, "26 rue du mermose 59300 Valenciennes", 100, 37);
+        Habitation habitation2 = new HabitationProfessionnelle(proprio2, "26 rue du mermose 59300 Valenciennes", 1000, 37);
+        Habitation habitation3 = new HabitationProfessionnelle(proprio3, "32 rue du puy 59300 Valenciennes", 500, 15);
+        Habitation habitation4 = new HabitationIndividuelle(proprio4, "73 rue du vieux port 59770 Marly", 150, 10, true);
 
-        System.out.println(habitation2.affiche());
+        System.out.println(habitation3.impot());
     }
 
 }
