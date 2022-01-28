@@ -33,7 +33,7 @@ public class Habitation {
     }
 
     public double impot() {
-        return 0;
+        return 2 * surface;
     }
 
     public String affiche() {

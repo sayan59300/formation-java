@@ -4,6 +4,8 @@
  */
 package impots;
 
+import java.lang.Math;
+
 /**
  *
  * @author Sayan593
@@ -29,7 +31,7 @@ public class HabitationProfessionnelle extends Habitation {
 
     @Override
     public double impot() {
-        return 0;
+        return (super.impot() + (1000 * Math.ceil(nombreEmployes / 10)));
     }
 
     @Override

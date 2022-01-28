@@ -35,7 +35,7 @@ public class HabitationIndividuelle extends Habitation {
 
     @Override
     public double impot() {
-        return 0;
+        return (super.impot() + (100 * nombrePieces) + (piscine ? 500 : 0));
     }
 
     @Override
