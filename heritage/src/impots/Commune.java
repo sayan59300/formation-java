@@ -12,10 +12,16 @@ public class Commune {
 
     private final int codePostale;
     private final String nom;
+    private Habitation[] habitations = new Habitation[20];
 
-    public Commune(int codePostale, String nom) {
+    public Commune(int codePostale, String nom, Habitation[] habitations) {
         this.codePostale = codePostale;
         this.nom = nom;
+        this.habitations = habitations;
+    }
+
+    public Habitation[] getHabitations() {
+        return habitations;
     }
 
     public int getCodePostale() {
@@ -24,6 +30,10 @@ public class Commune {
 
     public String getNom() {
         return nom;
+    }
+
+    public double calculImpotsLocaux() {
+        return 0;
     }
 
     @Override

@@ -11,14 +11,30 @@ package impots;
 public class HabitationProfessionnelle extends Habitation {
 
     private final int identifiant;
+    private final int nombreEmployes;
 
     public int getIdentifiant() {
         return identifiant;
     }
 
-    public HabitationProfessionnelle(String proprietaire, String adresse, double surface, int identifiant) {
+    public int getNombreEmployes() {
+        return nombreEmployes;
+    }
+
+    public HabitationProfessionnelle(String proprietaire, String adresse, double surface, int identifiant, int nombreEmployes) {
         super(proprietaire, adresse, surface);
         this.identifiant = identifiant;
+        this.nombreEmployes = nombreEmployes;
+    }
+
+    @Override
+    public double impot() {
+        return 0;
+    }
+
+    @Override
+    public String affiche() {
+        return super.affiche() + "\nNombre d'employé(s) : " + nombreEmployes;
     }
 
 }
