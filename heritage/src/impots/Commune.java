@@ -33,7 +33,13 @@ public class Commune {
     }
 
     public double calculImpotsLocaux() {
-        return 0;
+        double impots = 0;
+        for (Habitation habitation : habitations) {
+            if (habitations != null) {
+                impots += habitation.impot();
+            }
+        }
+        return impots;
     }
 
     @Override
