@@ -10,17 +10,17 @@ package impots;
  */
 public class Habitation {
 
-    private final String proprietaire;
+    private final Proprietaire proprietaire;
     private final String adresse;
     private final double surface;
 
-    public Habitation(String proprietaire, String adresse, double surface) {
+    public Habitation(Proprietaire proprietaire, String adresse, double surface) {
         this.proprietaire = proprietaire;
         this.adresse = adresse;
         this.surface = surface;
     }
 
-    public String getProprietaire() {
+    public Proprietaire getProprietaire() {
         return proprietaire;
     }
 

@@ -19,11 +19,10 @@ public class DemoCalcImpots {
         Proprietaire proprio3 = new Proprietaire("Abrams", "JJ", 47, 3);
         Proprietaire proprio4 = new Proprietaire("Jackson", "Mickael", 70, 4);
 
-        System.out.println(proprio1);
-        System.out.println(proprio2);
-        System.out.println(proprio3);
-        System.out.println(proprio4);
+        Habitation habitation1 = new HabitationIndividuelle(proprio1, "23 rue du menile 59770 Marly", 100, 8, false);
+        Habitation habitation2 = new HabitationProfessionnelle(proprio2, "26 rue du mermose 59300 Valenciennes", 100, 37);
 
+        System.out.println(habitation2.affiche());
     }
 
 }

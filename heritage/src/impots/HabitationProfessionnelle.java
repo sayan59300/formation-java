@@ -12,20 +12,14 @@ import java.lang.Math;
  */
 public class HabitationProfessionnelle extends Habitation {
 
-    private final int identifiant;
     private final int nombreEmployes;
-
-    public int getIdentifiant() {
-        return identifiant;
-    }
 
     public int getNombreEmployes() {
         return nombreEmployes;
     }
 
-    public HabitationProfessionnelle(String proprietaire, String adresse, double surface, int identifiant, int nombreEmployes) {
+    public HabitationProfessionnelle(Proprietaire proprietaire, String adresse, double surface, int nombreEmployes) {
         super(proprietaire, adresse, surface);
-        this.identifiant = identifiant;
         this.nombreEmployes = nombreEmployes;
     }
 
