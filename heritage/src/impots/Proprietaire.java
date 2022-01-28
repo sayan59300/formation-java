@@ -32,7 +32,7 @@ public class Proprietaire extends Personne {
 
     @Override
     public String toString() {
-        return super.toString() + "\nIdentifiant : " + identifiant + '}';
+        return super.toString() + "\nIdentifiant : " + identifiant;
     }
 
 }
