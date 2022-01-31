@@ -4,6 +4,8 @@
  */
 package pokemon;
 
+import java.lang.Math;
+
 /**
  *
  * @author sayan593
@@ -21,9 +23,13 @@ public class PokemonAquatique extends Pokemon {
         return nombreNageoire;
     }
 
+    public double vitesse() {
+        return Math.ceil(super.getPoids() / 25 * nombreNageoire);
+    }
+
     @Override
     public String toString() {
-        return super.toString() + "\nPokemonAquatique " + "\nNombre de nageoire(s) : " + nombreNageoire;
+        return super.toString() + "\nPokemon aquatique " + "\nNombre de nageoire(s) : " + nombreNageoire;
     }
 
 }

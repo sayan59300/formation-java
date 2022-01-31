@@ -5,6 +5,7 @@
 package pokemon;
 
 import java.util.ArrayList;
+import java.lang.Math;
 
 /**
  *
@@ -21,6 +22,10 @@ public class CollectionPokemons {
         pokedex.add(pokemon);
     }
 
+    public ArrayList<Pokemon> getPokedex() {
+        return pokedex;
+    }
+
     public double vitesseMoyenneSportifs() {
         int nombrePokemon = 0;
         int addition = 0;
@@ -30,6 +35,6 @@ public class CollectionPokemons {
                 addition += PokemonSportif.vitesse();
             }
         }
-        return addition / nombrePokemon;
+        return Math.ceil(addition / nombrePokemon);
     }
 }

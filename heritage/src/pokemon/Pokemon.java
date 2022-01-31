@@ -34,7 +34,7 @@ public class Pokemon {
 
     @Override
     public String toString() {
-        return "\nPokemon" + "\nNom : " + nom + "\nPoids : " + poids + "\nTaille : " + taille;
+        return "\nPokemon" + "\nNom : " + nom + "\nPoids : " + poids + " Kg\nTaille : " + taille + " mètre(s)";
     }
 
 }

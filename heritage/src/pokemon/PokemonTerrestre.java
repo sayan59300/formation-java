@@ -4,6 +4,8 @@
  */
 package pokemon;
 
+import java.lang.Math;
+
 /**
  *
  * @author sayan593
@@ -22,7 +24,7 @@ public class PokemonTerrestre extends Pokemon {
     }
 
     public double vitesse() {
-        return nombrePatte * super.getTaille() * 3;
+        return Math.ceil(nombrePatte * super.getTaille() * 3);
     }
 
     @Override

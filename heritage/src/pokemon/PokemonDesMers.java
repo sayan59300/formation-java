@@ -14,13 +14,9 @@ public class PokemonDesMers extends PokemonAquatique {
         super(nom, poids, taille, nombreNageoire);
     }
 
-    public double vitesse() {
-        return super.getPoids() / 25 * super.getNombreNageoire();
-    }
-
     @Override
     public String toString() {
-        return super.toString() + "\nPokemon des mers" + "\nVitesse : " + vitesse();
+        return super.toString() + "\nPokemon des mers" + "\nVitesse : " + super.vitesse() + " km/h";
     }
 
 }
