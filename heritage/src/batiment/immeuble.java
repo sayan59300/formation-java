@@ -8,6 +8,22 @@ package batiment;
  *
  * @author sayan593
  */
-public class immeuble {
+public class Immeuble extends Batiment {
+
+    private final int nbAppart;
+
+    public Immeuble(String adresse, double surfaceHabitable, int nbAppart) {
+        super(adresse, surfaceHabitable);
+        this.nbAppart = nbAppart;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + """
+
+               Immeuble
+                                  """
+                + "Nombre d'appartement : " + nbAppart;
+    }
 
 }

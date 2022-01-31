@@ -8,6 +8,19 @@ package batiment;
  *
  * @author sayan593
  */
-public class batiment {
+public class Batiment {
+
+    private final String adresse;
+    private final double surfaceHabitable;
+
+    public Batiment(String adresse, double surfaceHabitable) {
+        this.adresse = adresse;
+        this.surfaceHabitable = surfaceHabitable;
+    }
+
+    @Override
+    public String toString() {
+        return "\nAdresse : " + adresse + "\nSurface habitable : " + surfaceHabitable;
+    }
 
 }
