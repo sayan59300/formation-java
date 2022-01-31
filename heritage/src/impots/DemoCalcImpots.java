@@ -36,9 +36,18 @@ public class DemoCalcImpots {
         habitationsValenciennes[1] = habitationValenciennes2;
         habitationsValenciennes[2] = habitationValenciennes3;
 
+        for (int i = 0; i < habitationsMarly.length; i++) {
+            System.out.println(habitationsMarly[i].affiche());
+        }
+
+        for (int i = 0; i < habitationsValenciennes.length; i++) {
+            System.out.println(habitationsValenciennes[i].affiche());
+        }
+
         Commune communeMarly = new Commune(59770, "Marly", habitationsMarly);
         Commune communeValenciennes = new Commune(59300, "Valenciennes", habitationsValenciennes);
 
+        System.out.println("--------------");
         System.out.println("Impots locaux de la commune de " + communeMarly.getNom() + " : " + communeMarly.calculImpotsLocaux() + " €");
         System.out.println("Impots locaux de la commune de " + communeValenciennes.getNom() + " : " + communeValenciennes.calculImpotsLocaux() + " €");
     }
